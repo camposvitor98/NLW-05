@@ -18,6 +18,9 @@ class Connection {
   @Column()
   admin_id: string;
 
+  @Column()
+  socket_id: string;
+
   @JoinColumn({ name: "user_id" })
   @ManyToOne(() => User)
   user: User;

@@ -5,6 +5,8 @@ import { ConnectionsRepository } from "../repositories/ConnectionsRepository";
 interface IConnectionCreate {
   admin_id?: string;
   user_id: string;
+  socket_id: string;
+  id?: string;
 }
 
 class ConnectionsService {
@@ -14,10 +16,12 @@ class ConnectionsService {
     this.connectionsRepository = getCustomRepository(ConnectionsRepository);
   }
 
-  async create({ admin_id, user_id }: IConnectionCreate) {
+  async create({ admin_id, user_id, socket_id, id }: IConnectionCreate) {
     const connection = this.connectionsRepository.create({
       admin_id,
       user_id,
+      socket_id,
+      id,
     });
 
     await this.connectionsRepository.save(connection);

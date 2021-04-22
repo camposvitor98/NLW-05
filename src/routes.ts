@@ -21,3 +21,11 @@ routes.get("/messages/:id", messagesController.showByUser);
 routes.post("/connections", connectionsController.create);
 
 export { routes };
+
+/*
+  GET = Buscas
+  POST = Criação
+  PUT = Alteração
+  DELETE = Deletar
+  PATCH = Alterar uma informação especifica
+ */
