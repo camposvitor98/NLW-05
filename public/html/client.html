@@ -22,14 +22,13 @@
       </div>
 
       <div class="text_support">
-        <script id="email-template" type="text/template">
+        
+        <script id="message-user-template" type="text/template">
           <div class="client">
             <span class="name">{{email}}</span>
-        </script>
-        <script id="message-user-template" type="text/template">
             <span class="client message">
               {{message}}
-              <!-- <label class="date">{{date}}</label> -->
+              <label class="date">{{date}}</label>
             </span>
           </div>
         </script>
@@ -37,11 +36,11 @@
           <div class="admin">
             <span class="admin_name">Atendente</span>
             <span class="admin message"> {{message_admin}} </span>
-            <!-- <label class="date">{{date}}</label> -->
+            <label class="date">{{date}}</label>
           </div>
         </script>
         <div id="messages" class="chat__messages"></div>
-        <!-- <div class="line"></div> -->
+        <div class="line"></div>
       </div>
       <div class="message_send">
         <input
@@ -100,6 +99,7 @@
   <script>
     onLoad();
     const chat = document.getElementById("chat_help");
+    const chatSupport = document.getElementById("chat_in_support")
 
     function onLoad() {
       fetch("http://localhost:3333/settings/admin").then((result) =>
@@ -118,6 +118,7 @@
 
     function closeChat() {
       chat.style.display = "none";
+      chatSupport.style.display = "none";
     }
 
     function keyUpTextHelp(event) {
