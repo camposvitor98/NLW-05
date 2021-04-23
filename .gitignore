@@ -2,6 +2,4 @@ node_modules
 
 .nlw
 
-.\src\database\database.sqlite
-
-tested
+**/database.sqlite
